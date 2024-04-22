@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Categoria from '../../../model/Categoria';
 import { buscar } from '../../../services/Service';
-import CardTemas from '../cardCategorias/CardCategorias';
+import CardCategorias from '../cardCategorias/CardCategorias';
 
 function ListaCategorias() {
   const [categoria, setCategorias] = useState<Categoria[]>([]);
@@ -14,7 +14,7 @@ function ListaCategorias() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  async function buscarTemas() {
+  async function buscarCategorias() {
     try {
       await buscar('/categorias', setCategorias, {
         headers: { Authorization: token },
@@ -35,7 +35,7 @@ function ListaCategorias() {
   }, [token]);
 
   useEffect(() => {
-    buscarTemas();
+    buscarCategorias();
   }, [categoria.length]);
   return (
     <>
@@ -54,7 +54,7 @@ function ListaCategorias() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoria.map((categoria) => (
               <>
-                <CardTemas key={categoria.id} categoria={categoria} />
+                <CardCategorias key={categoria.id} categoria={categoria} />
               </>
             ))}
           </div>

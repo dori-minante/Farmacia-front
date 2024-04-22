@@ -54,10 +54,10 @@ function DeletarCategoria() {
                 }
             })
 
-            alert('Tema apagado com sucesso')
+            alert('Categoria apagada com sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar o Tema')
+            alert('Erro ao apagar a Categoria')
         }
 
         retornar()

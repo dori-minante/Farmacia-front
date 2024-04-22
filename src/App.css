@@ -1,8 +1,15 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
+  height: 100%;
 }
 
 .logo {
