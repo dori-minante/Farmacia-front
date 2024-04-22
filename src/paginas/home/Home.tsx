@@ -1,5 +1,5 @@
 import React from 'react';
-import homeLogo from '../../assets/home.png'
+import homeLogo from '../../assets/logo.png'
 import './Home.css';
 
 
